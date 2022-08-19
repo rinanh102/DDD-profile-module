@@ -1,0 +1,11 @@
+import { IUseCase, UseCase, UseCasePipeMethod } from '@cbidigital/aqua';
+import { IProfileRelationshipTypeDAO } from '../../../../infra/databases/daos';
+import { GetListProfileRelationshipTypesCaseContext, GetListProfileRelationshipTypesUseCaseInput, GetListProfileRelationshipTypesUseCaseMapInput, GetListProfileRelationshipTypesUseCaseMapOutput, GetListProfileRelationshipTypesUseCaseOutput, GetListProfileRelationshipTypesUseCaseProcessingInput, GetListProfileRelationshipTypesUseCaseProcessingOutput, GetListProfileRelationshipTypesUseCaseValidateInput, GetListProfileRelationshipTypesUseCaseValidateOutput } from './types';
+export declare type IGetListProfileRelationshipTypesUseCase = IUseCase<GetListProfileRelationshipTypesUseCaseInput, GetListProfileRelationshipTypesUseCaseOutput, GetListProfileRelationshipTypesCaseContext>;
+export declare class GetListProfileRelationshipTypesUseCase extends UseCase<GetListProfileRelationshipTypesUseCaseInput, GetListProfileRelationshipTypesUseCaseOutput, GetListProfileRelationshipTypesCaseContext> implements IGetListProfileRelationshipTypesUseCase {
+    private readonly _profileRelationshipTypeDAO;
+    constructor(_profileRelationshipTypeDAO: IProfileRelationshipTypeDAO);
+    validate: UseCasePipeMethod<GetListProfileRelationshipTypesUseCaseValidateInput, GetListProfileRelationshipTypesUseCaseValidateOutput>;
+    processing: UseCasePipeMethod<GetListProfileRelationshipTypesUseCaseProcessingInput, GetListProfileRelationshipTypesUseCaseProcessingOutput>;
+    map: UseCasePipeMethod<GetListProfileRelationshipTypesUseCaseMapInput, GetListProfileRelationshipTypesUseCaseMapOutput>;
+}

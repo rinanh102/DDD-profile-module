@@ -1,0 +1,46 @@
+import { Entity } from '@cbidigital/aqua';
+import { Nullable } from '@heronjs/common';
+import { CreateProfileAddressInput, CreateProfileAddressOutput, UpdateProfileAddressInput, UpdateProfileAddressOutput } from '../types';
+export declare type ProfileAddressProps = {
+    createdAt: Date;
+    updatedAt: Nullable<Date>;
+    profileId: string;
+    country: Nullable<string>;
+    region: Nullable<string>;
+    province: Nullable<string>;
+    district: Nullable<string>;
+    ward: Nullable<string>;
+    address: Nullable<string>;
+    postalCode: Nullable<string>;
+    latitude: Nullable<number>;
+    longitude: Nullable<number>;
+};
+export declare class ProfileAddress extends Entity<ProfileAddressProps> {
+    constructor(id?: string, props?: ProfileAddressProps);
+    get profileId(): string;
+    get country(): Nullable<string>;
+    get region(): Nullable<string>;
+    get province(): Nullable<string>;
+    get district(): Nullable<string>;
+    get ward(): Nullable<string>;
+    get address(): Nullable<string>;
+    get postalCode(): Nullable<string>;
+    get latitude(): Nullable<number>;
+    get longitude(): Nullable<number>;
+    get createdAt(): Date;
+    get updatedAt(): Nullable<Date>;
+    private setProfileId;
+    private setCountry;
+    private setRegion;
+    private setProvince;
+    private setDistrict;
+    private setWard;
+    private setAddress;
+    private setPosttalCode;
+    private setLatitude;
+    private setLongtitude;
+    private setCreatedAt;
+    private setUpdatedAt;
+    create(payload: CreateProfileAddressInput): Promise<CreateProfileAddressOutput>;
+    update(payload: UpdateProfileAddressInput): Promise<UpdateProfileAddressOutput>;
+}

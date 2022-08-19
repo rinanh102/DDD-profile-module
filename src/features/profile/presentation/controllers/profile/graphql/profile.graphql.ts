@@ -1,0 +1,3 @@
+class TodoGraphQL {}
+
+export { TodoGraphQL };
